@@ -83,6 +83,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const cardDescription = document.getElementById('card-description');
 
+    // Smooth text updates with micro fade/translate
+    function updateCardText(numericVal) {
+        const newTitle = valueNames[numericVal] || 'HOME';
+        const newDesc = valueDescriptions[numericVal] || '';
+
+        if (display && display.textContent !== newTitle) {
+            display.style.opacity = '0';
+            display.style.transform = 'translateY(-4px)';
+            setTimeout(() => {
+                display.textContent = newTitle;
+                display.style.opacity = '1';
+                display.style.transform = 'translateY(0)';
+            }, 80);
+        }
+
+        if (cardDescription && cardDescription.textContent !== newDesc) {
+            cardDescription.style.opacity = '0';
+            cardDescription.style.transform = 'translateY(4px)';
+            setTimeout(() => {
+                cardDescription.textContent = newDesc;
+                cardDescription.style.opacity = '1';
+                cardDescription.style.transform = 'translateY(0)';
+            }, 80);
+        }
+    }
+
     // Update Output View (Step 1: Fullscreen Home, Steps 2-4: 3D Y-Axis Spinning Card)
     function updateValue(val) {
         if (window.innerWidth >= 992) {
@@ -97,12 +123,10 @@ document.addEventListener('DOMContentLoaded', () => {
         slider.value = numericVal;
 
         if (numericVal === currentVal) return;
+        const prevVal = currentVal;
         currentVal = numericVal;
 
-        display.textContent = valueNames[numericVal] || 'HOME';
-        if (cardDescription) {
-            cardDescription.textContent = valueDescriptions[numericVal] || '';
-        }
+        updateCardText(numericVal);
 
         if (numericVal === 1) {
             // Step 1: Fullscreen Hero View with "WD343" and Random Subtitle
@@ -113,25 +137,27 @@ document.addEventListener('DOMContentLoaded', () => {
             if (homeFullscreen) homeFullscreen.classList.add('hidden-home');
             if (card3dScene) card3dScene.classList.remove('hidden-card');
 
-            // Trigger Y-Axis Card Spin Animation on step change
+            // Trigger direction-aware 3D Card Spin Animation smoothly via rAF
             if (outputCard) {
-                outputCard.classList.remove('flip-spinning');
-                void outputCard.offsetWidth;
-                outputCard.classList.add('flip-spinning');
+                const spinClass = (prevVal !== null && numericVal < prevVal) ? 'flip-spinning-prev' : 'flip-spinning-next';
+                outputCard.classList.remove('flip-spinning-next', 'flip-spinning-prev', 'flip-spinning');
+                requestAnimationFrame(() => {
+                    outputCard.classList.add(spinClass);
+                });
             }
 
-            // Update Image Layer inside the Card
+            // Update Image Layer inside the Card smoothly
             const bgClass = valueClasses[numericVal];
             if (bgClass && activeLayer && inactiveLayer) {
                 inactiveLayer.className = `card-img-layer ${bgClass}`;
-                void inactiveLayer.offsetWidth;
+                requestAnimationFrame(() => {
+                    inactiveLayer.classList.add('active');
+                    activeLayer.classList.remove('active');
 
-                inactiveLayer.classList.add('active');
-                activeLayer.classList.remove('active');
-
-                const temp = activeLayer;
-                activeLayer = inactiveLayer;
-                inactiveLayer = temp;
+                    const temp = activeLayer;
+                    activeLayer = inactiveLayer;
+                    inactiveLayer = temp;
+                });
             }
         }
     }
