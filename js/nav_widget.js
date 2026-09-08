@@ -83,6 +83,12 @@
         slider.addEventListener('change', checkRelease);
         slider.addEventListener('touchend', checkRelease);
         slider.addEventListener('mouseup', checkRelease);
+
+        window.addEventListener('pageshow', () => {
+            document.body.classList.remove('page-exit');
+            isTriggered = false;
+            slider.value = 100;
+        });
     }
 
     if (document.readyState === 'loading') {
@@ -91,3 +97,4 @@
         initSlideWidget();
     }
 })();
+

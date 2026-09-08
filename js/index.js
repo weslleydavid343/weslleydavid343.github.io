@@ -280,7 +280,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Handle bfcache restoration (pageshow event when returning via back button/gesture)
+    window.addEventListener('pageshow', () => {
+        document.body.classList.remove('page-exit');
+        isDragging = false;
+        popup.classList.add('hidden');
+        updateValue(1);
+    });
+
     // Initialize default state
     setSliderOrientation(true);
     updateValue(1);
 });
+
