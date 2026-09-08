@@ -200,13 +200,14 @@ a:hover {
     top: auto !important;
     left: auto !important;
     z-index: 999999 !important;
-    width: 160px;
-    height: 36px;
+    width: 100px;
+    height: 72px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     user-select: none;
     -webkit-user-select: none;
+    touch-action: manipulation;
 }
 
 @media (min-width: 992px) {
@@ -219,7 +220,8 @@ a:hover {
     .corner-slider-widget {
         bottom: calc(76px + env(safe-area-inset-bottom, 0px)) !important;
         right: 0 !important;
-        width: 140px;
+        width: 100px;
+        height: 72px;
     }
 }
 
@@ -227,36 +229,38 @@ a:hover {
 .corner-slider-widget .slider-track-line {
     position: absolute;
     top: 50%;
-    left: 20px;
+    left: 12px;
     right: 0; /* Extends straight to the edge of the screen */
     height: 4px;
     background-color: var(--text-primary, #2c221e);
     transform: translateY(-50%);
     z-index: 1;
+    pointer-events: none;
 }
 
 /* Vertical Black Target Tick on Left */
 .corner-slider-widget .slider-target-tick {
     position: absolute;
     top: 50%;
-    left: 20px;
+    left: 12px;
     width: 4px;
-    height: 20px;
+    height: 36px;
     background-color: var(--text-primary, #2c221e);
     transform: translateY(-50%);
     z-index: 2;
     border-radius: 1px;
+    pointer-events: none;
 }
 
-/* Range Input overlaying the track with right margin so line extends past thumb */
+/* Range Input overlaying the track with ample touch height and touch-action manipulation */
 input[type="range"].corner-slide-input {
     -webkit-appearance: none;
     appearance: none;
     position: relative;
     z-index: 3;
-    width: calc(100% - 20px);
-    margin-left: 20px;
-    margin-right: 24px;
+    width: calc(100% - 12px);
+    margin-left: 12px;
+    margin-right: 12px;
     height: 100%;
     background: transparent;
     outline: none;
@@ -264,19 +268,20 @@ input[type="range"].corner-slide-input {
     margin-top: 0;
     margin-bottom: 0;
     padding: 0;
+    touch-action: manipulation;
 }
 
 input[type="range"].corner-slide-input:active {
     cursor: grabbing;
 }
 
-/* White Vertical Thumb (identical to menu slider thumb) */
+/* White Vertical Thumb (3x width, 2x height for super easy touching) */
 input[type="range"].corner-slide-input::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 6px;
-    height: 28px;
-    border-radius: 1px;
+    width: 24px;
+    height: 60px;
+    border-radius: 4px;
     background: #ffffff;
     border: none;
     box-shadow: 0 2px 8px rgba(60, 45, 30, 0.35);
@@ -285,9 +290,9 @@ input[type="range"].corner-slide-input::-webkit-slider-thumb {
 }
 
 input[type="range"].corner-slide-input::-moz-range-thumb {
-    width: 6px;
-    height: 28px;
-    border-radius: 1px;
+    width: 24px;
+    height: 60px;
+    border-radius: 4px;
     background: #ffffff;
     border: none;
     box-shadow: 0 2px 8px rgba(60, 45, 30, 0.35);
@@ -296,9 +301,12 @@ input[type="range"].corner-slide-input::-moz-range-thumb {
 }
 
 input[type="range"].corner-slide-input::-webkit-slider-thumb:hover {
-    transform: scale(1.15);
+    transform: scale(1.08);
 }
 
 input[type="range"].corner-slide-input::-moz-range-thumb:hover {
-    transform: scale(1.15);
+    transform: scale(1.08);
 }
+
+
+

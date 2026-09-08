@@ -33,8 +33,8 @@
             if (isTriggered || window.innerWidth >= 992) return;
             const val = parseInt(slider.value, 10);
 
-            // If dragged left towards black target tick (<= 25%), trigger return to Previous Page!
-            if (val <= 25) {
+            // If dragged left towards target tick (<= 35%), trigger return to Previous Page!
+            if (val <= 35) {
                 triggerReturnBack();
             } else {
                 // Smoothly snap white handle back to right end (100%)
@@ -75,10 +75,11 @@
         // Realtime drag listener
         slider.addEventListener('input', (e) => {
             const val = parseInt(e.target.value, 10);
-            if (val <= 10 && !isTriggered) {
+            if (val <= 20 && !isTriggered) {
                 triggerReturnBack();
             }
         });
+
 
         slider.addEventListener('change', checkRelease);
         slider.addEventListener('touchend', checkRelease);
