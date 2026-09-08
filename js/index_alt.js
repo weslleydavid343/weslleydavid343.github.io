@@ -142,10 +142,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (targetUrl) {
             document.body.classList.add('page-exit');
             setTimeout(() => {
+                currentVal = null;
+                updateValue(1);
                 window.location.href = targetUrl;
             }, 350);
         }
     }
+
 
     // Pointer/Touch Start (Positions popup ONCE at initial touch location)
     function handleStart(e) {
@@ -229,11 +232,20 @@ document.addEventListener('DOMContentLoaded', () => {
         navigateToSection(e.target.value);
     });
 
+    // Clean up DOM state when navigating away so BFCache saves step 1 (Home) state
+    window.addEventListener('pagehide', () => {
+        isDragging = false;
+        popup.classList.add('hidden');
+        currentVal = null;
+        updateValue(1);
+    });
+
     // Handle bfcache restoration (pageshow event when returning via back button/gesture)
     window.addEventListener('pageshow', () => {
         document.body.classList.remove('page-exit');
         isDragging = false;
         popup.classList.add('hidden');
+        currentVal = null;
         updateValue(1);
     });
 
@@ -241,4 +253,5 @@ document.addEventListener('DOMContentLoaded', () => {
     setSliderOrientation(true);
     updateValue(1);
 });
+
 
