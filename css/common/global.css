@@ -107,12 +107,14 @@ a:hover {
 /* Components */
 .site-header {
     width: 100%;
-    padding: var(--spacing-md) 0 0 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     z-index: 100;
+    background-color: #000000;
+    border-bottom: none;
 }
 
 .site-header .header-container {
@@ -149,17 +151,18 @@ a:hover {
         letter-spacing: 0.05em;
         padding: 6px 14px;
         background: transparent;
-        color: var(--text-primary);
-        border: 1px solid var(--text-primary);
-        border-radius: 2px;
+        color: #ffffff;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        border-radius: 4px;
         transition: all 0.2s ease;
         text-transform: uppercase;
     }
 
     .desktop-nav-btn:hover,
     .desktop-nav-btn.active {
-        background: var(--text-primary, #000);
-        color: #fff !important;
+        background: #ffffff;
+        color: #000000 !important;
+        border-color: #ffffff;
     }
 }
 
@@ -191,121 +194,64 @@ a:hover {
 }
 
 /* -------------------------------------------------------------
-   Floating Bottom-Right Slide-to-Return Widget (voltar.png design)
+   Floating Bottom-Right Back Button Widget
    ------------------------------------------------------------- */
-.corner-slider-widget {
+.corner-back-widget {
     position: fixed !important;
     bottom: 32px !important;
-    right: 0 !important;
+    right: 20px !important;
     top: auto !important;
     left: auto !important;
     z-index: 999999 !important;
-    width: 100px;
-    height: 72px;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
     user-select: none;
     -webkit-user-select: none;
-    touch-action: manipulation;
+}
+
+@media (max-width: 991px) {
+    .corner-back-widget {
+        bottom: calc(24px + env(safe-area-inset-bottom, 0px)) !important;
+        right: 16px !important;
+    }
 }
 
 @media (min-width: 992px) {
-    .corner-slider-widget {
+    .corner-back-widget {
         display: none !important;
     }
 }
 
-@media (max-width: 991px) {
-    .corner-slider-widget {
-        bottom: calc(76px + env(safe-area-inset-bottom, 0px)) !important;
-        right: 0 !important;
-        width: 100px;
-        height: 72px;
-    }
-}
-
-/* Horizontal Track Line extending all the way to the right screen edge */
-.corner-slider-widget .slider-track-line {
-    position: absolute;
-    top: 50%;
-    left: 12px;
-    right: 0; /* Extends straight to the edge of the screen */
-    height: 4px;
-    background-color: var(--text-primary, #2c221e);
-    transform: translateY(-50%);
-    z-index: 1;
-    pointer-events: none;
-}
-
-/* Vertical Black Target Tick on Left */
-.corner-slider-widget .slider-target-tick {
-    position: absolute;
-    top: 50%;
-    left: 12px;
-    width: 4px;
-    height: 36px;
-    background-color: var(--text-primary, #2c221e);
-    transform: translateY(-50%);
-    z-index: 2;
-    border-radius: 1px;
-    pointer-events: none;
-}
-
-/* Range Input overlaying the track with ample touch height and touch-action manipulation */
-input[type="range"].corner-slide-input {
-    -webkit-appearance: none;
-    appearance: none;
-    position: relative;
-    z-index: 3;
-    width: calc(100% - 12px);
-    margin-left: 12px;
-    margin-right: 12px;
-    height: 100%;
-    background: transparent;
+.corner-back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: #000000;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    border-radius: 30px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
     outline: none;
-    cursor: grab;
-    margin-top: 0;
-    margin-bottom: 0;
-    padding: 0;
-    touch-action: manipulation;
 }
 
-input[type="range"].corner-slide-input:active {
-    cursor: grabbing;
+.corner-back-btn:hover,
+.corner-back-btn:active {
+    background-color: #1a1a1a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
 }
 
-/* White Vertical Thumb (3x width, 2x height for super easy touching) */
-input[type="range"].corner-slide-input::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 24px;
-    height: 60px;
-    border-radius: 4px;
-    background: #ffffff;
-    border: none;
-    box-shadow: 0 2px 8px rgba(60, 45, 30, 0.35);
-    cursor: grab;
-    transition: background-color 0.15s ease, transform 0.15s ease;
-}
-
-input[type="range"].corner-slide-input::-moz-range-thumb {
-    width: 24px;
-    height: 60px;
-    border-radius: 4px;
-    background: #ffffff;
-    border: none;
-    box-shadow: 0 2px 8px rgba(60, 45, 30, 0.35);
-    cursor: grab;
-    transition: background-color 0.15s ease, transform 0.15s ease;
-}
-
-input[type="range"].corner-slide-input::-webkit-slider-thumb:hover {
-    transform: scale(1.08);
-}
-
-input[type="range"].corner-slide-input::-moz-range-thumb:hover {
-    transform: scale(1.08);
+.corner-back-btn .back-btn-arrow {
+    font-size: 1.1rem;
+    line-height: 1;
 }
 
 
