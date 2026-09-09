@@ -1,1 +1,79 @@
-[]
+[
+  {
+    "filename": "projeto_template_08.md",
+    "id": 208,
+    "date": "\"2026-09-08\"",
+    "tags": [
+      "\"headless,",
+      "architecture,",
+      "jamstack\""
+    ],
+    "title": "Projeto Template 08 - Arquitetura Desacoplada Headless"
+  },
+  {
+    "filename": "projeto_template_07.md",
+    "id": 207,
+    "date": "\"2026-09-07\"",
+    "tags": [
+      "\"dashboard,",
+      "metrics,",
+      "analytics\""
+    ],
+    "title": "Projeto Template 07 - Dashboard de Métricas de Conteúdo"
+  },
+  {
+    "filename": "projeto_template_06.md",
+    "id": 206,
+    "date": "\"2026-09-06\"",
+    "tags": [
+      "\"python,",
+      "search,",
+      "indexer\""
+    ],
+    "title": "Projeto Template 06 - Motor de Busca Indexado em Python"
+  },
+  {
+    "filename": "projeto_template_05.md",
+    "id": 205,
+    "date": "\"2026-09-05\"",
+    "tags": [
+      "\"obsidian,",
+      "markdown,",
+      "parser\""
+    ],
+    "title": "Projeto Template 05 - Importador de Notas Obsidian"
+  },
+  {
+    "filename": "projeto_template_04.md",
+    "id": 204,
+    "date": "\"2026-09-04\"",
+    "tags": [
+      "\"devops,",
+      "github,",
+      "actions\""
+    ],
+    "title": "Projeto Template 04 - Pipeline CI/CD GitHub Actions"
+  },
+  {
+    "filename": "projeto_template_03.md",
+    "id": 203,
+    "date": "\"2026-09-03\"",
+    "tags": [
+      "\"design-system,",
+      "css,",
+      "ui\""
+    ],
+    "title": "Projeto Template 03 - Design System Minimalista"
+  },
+  {
+    "filename": "projeto_template_02.md",
+    "id": 202,
+    "date": "\"2026-09-02\"",
+    "tags": [
+      "\"webp,",
+      "image,",
+      "rust\""
+    ],
+    "title": "Projeto Template 02 - Otimizador WebP Inteligente"
+  }
+]

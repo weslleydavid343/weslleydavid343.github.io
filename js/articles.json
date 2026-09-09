@@ -1,15 +1,5 @@
 [
   {
-    "filename": "meu_post.md",
-    "id": 101,
-    "date": "2026-09-04",
-    "tags": [
-      "tecnologia",
-      "flutter"
-    ],
-    "title": "Artigo Sobre Tecnologia e Inovação"
-  },
-  {
     "filename": "artigo_template_08.md",
     "id": 108,
     "date": "\"2026-09-08\"",
@@ -52,5 +42,38 @@
       "otimizacao\""
     ],
     "title": "Artigo Template 05 - Otimização de Imagens e WebP"
+  },
+  {
+    "filename": "artigo_template_04.md",
+    "id": 104,
+    "date": "\"2026-09-04\"",
+    "tags": [
+      "\"template,",
+      "git,",
+      "cicd\""
+    ],
+    "title": "Artigo Template 04 - Automação CI/CD e Git"
+  },
+  {
+    "filename": "artigo_template_03.md",
+    "id": 103,
+    "date": "\"2026-09-03\"",
+    "tags": [
+      "\"template,",
+      "flutter,",
+      "design-patterns\""
+    ],
+    "title": "Artigo Template 03 - Padrões de Projeto em Flutter"
+  },
+  {
+    "filename": "artigo_template_02.md",
+    "id": 102,
+    "date": "\"2026-09-02\"",
+    "tags": [
+      "\"template,",
+      "algoritmos,",
+      "performance\""
+    ],
+    "title": "Artigo Template 02 - Estruturas de Dados Eficientes"
   }
 ]
