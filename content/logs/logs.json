@@ -13,25 +13,5 @@
     "id": "log-tmpl-07",
     "date": "2026-09-07T10:00:00.000000",
     "content": "Log Template 07 - Análise de métricas de desempenho e carregamento do blog."
-  },
-  {
-    "id": "log-tmpl-06",
-    "date": "2026-09-06T10:00:00.000000",
-    "content": "Log Template 06 - Validação do componente visual de sliders do limitador."
-  },
-  {
-    "id": "log-tmpl-05",
-    "date": "2026-09-05T10:00:00.000000",
-    "content": "Log Template 05 - Teste de sincronização automatizada via Git service."
-  },
-  {
-    "id": "log-tmpl-04",
-    "date": "2026-09-04T10:00:00.000000",
-    "content": "Log Template 04 - Verificação de integridade dos arquivos JSON de índice."
-  },
-  {
-    "id": "log-tmpl-03",
-    "date": "2026-09-03T10:00:00.000000",
-    "content": "Log Template 03 - Ajuste nas políticas de otimização de imagens WebP."
   }
 ]
