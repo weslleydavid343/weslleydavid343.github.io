@@ -1,14 +1,10 @@
 ---
 id: 205
-title: "Projeto Template 05 - Importador de Notas Obsidian"
+title: "Projeto Template 5"
 date: "2026-09-05"
-tags: "obsidian, markdown, parser"
+tags: "template, projeto"
 ---
 
-# Projeto Template 05 - Importador de Notas Obsidian
+# Projeto Template 5
 
-Parser de sintaxe WikiLink e conversão de mídias Markdown.
-
-## Recursos
-- Resolução de caminhos relativos
-- Extração de títulos H1
+Este é um projeto de template temporário utilizado para testes de estrutura e layout.

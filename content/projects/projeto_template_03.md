@@ -1,14 +1,10 @@
 ---
 id: 203
-title: "Projeto Template 03 - Design System Minimalista"
+title: "Projeto Template 3"
 date: "2026-09-03"
-tags: "design-system, css, ui"
+tags: "template, projeto"
 ---
 
-# Projeto Template 03 - Design System Minimalista
+# Projeto Template 3
 
-Biblioteca de componentes para sites estáticos modernos.
-
-## Destaques
-- CSS Variables
-- Modo Escuro Nativo
+Este é um projeto de template temporário utilizado para testes de estrutura e layout.

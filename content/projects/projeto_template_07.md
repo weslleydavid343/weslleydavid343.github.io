@@ -1,14 +1,10 @@
 ---
 id: 207
-title: "Projeto Template 07 - Dashboard de Métricas de Conteúdo"
+title: "Projeto Template 7"
 date: "2026-09-07"
-tags: "dashboard, metrics, analytics"
+tags: "template, projeto"
 ---
 
-# Projeto Template 07 - Dashboard de Métricas de Conteúdo
+# Projeto Template 7
 
-Painel interativo para acompanhamento de publicações e limites.
-
-## Funcionalidades
-- Sliders dinâmicos de 0 a 15
-- Resumo de ativos locais vs. publicados
+Este é um projeto de template temporário utilizado para testes de estrutura e layout.

@@ -1,14 +1,10 @@
 ---
 id: 202
-title: "Projeto Template 02 - Otimizador WebP Inteligente"
+title: "Projeto Template 2"
 date: "2026-09-02"
-tags: "webp, image, rust"
+tags: "template, projeto"
 ---
 
-# Projeto Template 02 - Otimizador WebP Inteligente
+# Projeto Template 2
 
-Ferramenta CLI para conversão e otimização de mídias em lote.
-
-## Recursos
-- Compressão com perda e sem perda
-- Preservação de metadados
+Este é um projeto de template temporário utilizado para testes de estrutura e layout.

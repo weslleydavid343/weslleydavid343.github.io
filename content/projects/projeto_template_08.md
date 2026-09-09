@@ -1,14 +1,10 @@
 ---
 id: 208
-title: "Projeto Template 08 - Arquitetura Desacoplada Headless"
+title: "Projeto Template 8"
 date: "2026-09-08"
-tags: "headless, architecture, jamstack"
+tags: "template, projeto"
 ---
 
-# Projeto Template 08 - Arquitetura Desacoplada Headless
+# Projeto Template 8
 
-Estrutura Jamstack para blogs pessoais com automação Git.
-
-## Benefícios
-- Custo zero de hospedagem
-- Alta disponibilidade e resiliência
+Este é um projeto de template temporário utilizado para testes de estrutura e layout.

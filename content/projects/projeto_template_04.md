@@ -1,14 +1,10 @@
 ---
 id: 204
-title: "Projeto Template 04 - Pipeline CI/CD GitHub Actions"
+title: "Projeto Template 4"
 date: "2026-09-04"
-tags: "devops, github, actions"
+tags: "template, projeto"
 ---
 
-# Projeto Template 04 - Pipeline CI/CD GitHub Actions
+# Projeto Template 4
 
-Esteira automatizada para deploy de sites no GitHub Pages.
-
-## Etapas
-- Linter e validação
-- Build estático
+Este é um projeto de template temporário utilizado para testes de estrutura e layout.
