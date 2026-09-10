@@ -199,4 +199,18 @@
         }
     });
 
+    // Handle BFCache restoration (pageshow event when returning via back button/gesture)
+    window.addEventListener('pageshow', (event) => {
+        document.body.classList.remove('page-exit');
+        finishLoading();
+        const preloader = document.getElementById('site-preloader');
+        if (preloader) {
+            preloader.classList.add('loaded');
+            if (preloader.parentNode) {
+                preloader.parentNode.removeChild(preloader);
+            }
+        }
+    });
+
 })();
+
