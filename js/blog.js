@@ -8,7 +8,8 @@ function createArticleCard(article) {
     card.style.position = 'relative'; // Permite que o link esticado cubra toda a div
 
     // Create tags HTML
-    const tagsHtml = article.tags.map(tag => `<span class="badge badge-info">#${tag}</span>`).join(' ');
+    const tags = Array.isArray(article.tags) ? article.tags : [];
+    const tagsHtml = tags.map(tag => `<span class="badge badge-info">#${tag}</span>`).join(' ');
 
     let displayTime = '';
     let displayDate = article.date;

@@ -8,7 +8,8 @@ function createProjectCard(project) {
     card.style.position = 'relative'; // Permite que o link esticado cubra toda a div
 
     // Create tags HTML
-    const tagsHtml = project.tags.map(tag => `<span class="badge badge-info">#${tag}</span>`).join(' ');
+    const tags = Array.isArray(project.tags) ? project.tags : [];
+    const tagsHtml = tags.map(tag => `<span class="badge badge-info">#${tag}</span>`).join(' ');
 
     let displayTime = '';
     let displayDate = project.date;
