@@ -1,8 +1,95 @@
-/* Home Page Background */
+/* Home Page Hero View */
 body.home-page {
     position: relative;
-    background: linear-gradient(180deg, rgba(244, 235, 208, 0.78) 0%, rgba(244, 235, 208, 0.94) 100%),
-        url('../../assets/20191109_112944_min.webp') center/cover no-repeat fixed;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+    background-color: var(--bg-color, #0d0f12);
+}
+
+body.home-page .site-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: transparent;
+    pointer-events: none;
+}
+
+body.home-page .site-header .header-container {
+    pointer-events: auto;
+    justify-content: flex-end;
+}
+
+.home-fullscreen-view {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.home-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(244, 235, 208, 0.68) 0%, rgba(244, 235, 208, 0.88) 100%),
+                url('../../assets/20191109_112944_min_grain.webp') center/cover no-repeat;
+    z-index: 1;
+}
+
+.home-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 680px;
+    padding: 0 20px;
+}
+
+.home-brand-title {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: #000000;
+    padding: 10px 28px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    margin: 0 0 20px 0;
+    letter-spacing: 0.05em;
+    line-height: 1.1;
+}
+
+.home-subtitle {
+    font-family: var(--font-body);
+    font-size: 1.15rem;
+    color: var(--text-primary, #2c221e);
+    margin: 0;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+@media (max-width: 767px) {
+    .home-brand-title {
+        font-size: 2.75rem;
+        padding: 8px 20px;
+    }
+
+    .home-subtitle {
+        font-size: 1rem;
+    }
 }
 
 .hero {

@@ -1,13 +1,18 @@
 // Floating Bottom-Right Back Button Widget
 (function () {
-    function isHomePage() {
+    function isListingPage() {
         const path = window.location.pathname;
-        return path.endsWith('index.html') || path.endsWith('index_alt.html') || path === '/' || path.endsWith('/');
+        return path.endsWith('index.html') ||
+               path.endsWith('blog.html') ||
+               path.endsWith('logs.html') ||
+               path.endsWith('me.html') ||
+               path === '/' ||
+               path.endsWith('/');
     }
 
     function initNavWidget() {
-        // Never render the back widget on Home page
-        if (isHomePage()) return;
+        // Never render the back widget on listing pages
+        if (isListingPage()) return;
 
         if (document.getElementById('corner-back-widget')) return;
 
