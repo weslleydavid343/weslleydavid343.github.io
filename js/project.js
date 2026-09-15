@@ -7,28 +7,25 @@ function createProjectCard(project) {
     card.className = 'technical-card';
     card.style.position = 'relative'; // Permite que o link esticado cubra toda a div
 
-    // Create tags HTML
-    const tags = Array.isArray(project.tags) ? project.tags : [];
-    const tagsHtml = tags.map(tag => `<span class="badge badge-info">#${tag}</span>`).join(' ');
-
     let displayTime = '';
-    let displayDate = project.date;
+    let displayDate = project.date || '';
 
-    // Extract time from ISO string
-    if (project.date && project.date.includes('T')) {
-        const timePart = project.date.split('T')[1];
-        displayTime = timePart.substring(0, 5); // get HH:MM
-        displayDate = project.date.split('T')[0];
+    // Extract time from ISO or space-separated string
+    if (displayDate.includes('T')) {
+        const parts = displayDate.split('T');
+        displayDate = parts[0];
+        displayTime = parts[1].substring(0, 5); // get HH:MM
+    } else if (displayDate.includes(' ')) {
+        const parts = displayDate.split(' ');
+        displayDate = parts[0];
+        displayTime = parts[1].substring(0, 5); // get HH:MM
     }
 
-    const readingTimeHtml = displayTime ? ` • ${displayTime}` : '';
+    const readingTimeHtml = displayTime ? ` | ${displayTime}` : '';
 
     card.innerHTML = `
         <header class="card-header" style="margin-bottom: 0;">
             <h3 class="card-title">${project.title}</h3>
-            <div class="card-meta" style="margin-bottom: 8px; position: relative; z-index: 2;">
-                ${tagsHtml}
-            </div>
             <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-secondary);">
                 ${displayDate}${readingTimeHtml}
             </div>

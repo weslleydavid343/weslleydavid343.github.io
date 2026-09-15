@@ -92,6 +92,23 @@ body.home-page .site-header .header-container {
     }
 }
 
+body.home-page .home-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: none;
+    margin-top: 0;
+    z-index: 2;
+    padding: var(--spacing-md) 0;
+}
+
+@media (max-width: 991px) {
+    body.home-page .home-footer {
+        padding-bottom: calc(75px + env(safe-area-inset-bottom, 0px));
+    }
+}
+
 .hero {
     padding: var(--spacing-xl) 0;
 }

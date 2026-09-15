@@ -1,8 +1,8 @@
 {
-  "primaryColor": "#38bdf8",
-  "secondaryColor": "#10b981",
-  "backgroundColor": "#0d0f12",
-  "surfaceColor": "#15181c",
-  "textPrimary": "#e0e4eb",
-  "textSecondary": "#9aa0a6"
+  "primaryColor": "#000000",
+  "secondaryColor": "#4a6b4e",
+  "backgroundColor": "#f4ebd0",
+  "surfaceColor": "#fdfbf5",
+  "textPrimary": "#2c221e",
+  "textSecondary": "#786551"
 }

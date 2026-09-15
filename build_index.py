@@ -25,24 +25,11 @@ def parse_markdown(filepath, filename):
     else:
         metadata['id'] = int(os.path.getmtime(filepath))
 
-    # 2. Extract data or date (optional fallback to file mtime yyyy-mm-dd)
-    data_match = re.search(r'^(?:data|date):\s*(.+)$', content, re.MULTILINE)
-    if data_match:
-        metadata['date'] = data_match.group(1).strip()
-    else:
-        metadata['date'] = datetime.datetime.fromtimestamp(os.path.getmtime(filepath)).strftime('%Y-%m-%d')
+    # 2. Always use file modification timestamp (date + time)
+    mtime_dt = datetime.datetime.fromtimestamp(os.path.getmtime(filepath))
+    metadata['date'] = mtime_dt.strftime('%Y-%m-%dT%H:%M:%S')
         
-    # 3. Extract tags (optional fallback to hashtag search or empty list)
-    tags_match = re.search(r'^(?:tags|TAGS):\s*(.+)$', content, re.MULTILINE)
-    if tags_match:
-        tags_str = tags_match.group(1)
-        metadata['tags'] = [t.strip().replace('#', '') for t in tags_str.split() if t.strip()]
-    else:
-        # Search for inline #tags in content
-        found_tags = re.findall(r'#([a-zA-Z0-9_\-]+)', content)
-        metadata['tags'] = list(set(found_tags))
-
-    # 4. Extract title from frontmatter, fallback to H1 or filename
+    # 3. Extract title from frontmatter, fallback to H1 or filename
     title_match = re.search(r'^title:\s*(.+)$', content, re.MULTILINE)
     if title_match:
         title_raw = title_match.group(1).strip()

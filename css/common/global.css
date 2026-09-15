@@ -201,6 +201,12 @@ a:hover {
     margin-top: var(--spacing-xl);
 }
 
+@media (max-width: 991px) {
+    .site-footer {
+        padding-bottom: calc(75px + env(safe-area-inset-bottom, 0px));
+    }
+}
+
 .footer-content {
     display: flex;
     flex-direction: column;
